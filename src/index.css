@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #DEDBC8;
+  --font-serif: "Instrument Serif", serif;
+}
+
+* { 
+  font-family: 'Almarai', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif; 
+}
+
+.noise-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+.hero-gradient {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, transparent 50%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+.nav-pill {
+  background: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: none;
+}
+
+/* High Contrast Light Mode for Extended Study Sessions */
+html.light {
+  color-scheme: light;
+  background-color: #F8F7F2 !important;
+  color: #111111 !important;
+}
+
+html.light body,
+html.light main {
+  background-color: #F8F7F2 !important;
+  color: #111111 !important;
+}
+
+html.light .bg-black {
+  background-color: #F8F7F2 !important;
+}
+
+html.light .bg-\[\#080808\] {
+  background-color: #FFFFFF !important;
+}
+
+html.light .bg-\[\#0d0d0d\] {
+  background-color: #F4F2EA !important;
+}
+
+html.light .bg-\[\#101010\] {
+  background-color: #FFFFFF !important;
+}
+
+html.light .bg-\[\#141414\] {
+  background-color: #EFECE3 !important;
+}
+
+html.light .text-\[\#E1E0CC\] {
+  color: #111111 !important;
+}
+
+html.light .text-\[\#DEDBC8\] {
+  color: #1A1A1A !important;
+}
+
+html.light .text-primary {
+  color: #111111 !important;
+}
+
+html.light .text-primary\/90 {
+  color: #222222 !important;
+}
+
+html.light .text-primary\/80 {
+  color: #2D2D2D !important;
+}
+
+html.light .text-primary\/70 {
+  color: #383838 !important;
+}
+
+html.light .text-primary\/60 {
+  color: #4A4A4A !important;
+}
+
+html.light .text-primary\/50 {
+  color: #5C5C5C !important;
+}
+
+html.light .text-primary\/40 {
+  color: #6E6E6E !important;
+}
+
+html.light .border-white\/10,
+html.light .border-white\/15,
+html.light .border-white\/20,
+html.light .border-white\/5 {
+  border-color: rgba(0, 0, 0, 0.16) !important;
+}
+
+html.light .bg-white\/5 {
+  background-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+html.light .bg-white\/10 {
+  background-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+html.light .bg-white\/15 {
+  background-color: rgba(0, 0, 0, 0.12) !important;
+}
+
+html.light .bg-primary {
+  background-color: #181818 !important;
+  color: #FFFFFF !important;
+}
+
+html.light .bg-primary\/10 {
+  background-color: rgba(24, 24, 24, 0.08) !important;
+}
+
+html.light .bg-primary\/20 {
+  background-color: rgba(24, 24, 24, 0.14) !important;
+}
+
+html.light .prose {
+  color: #111111 !important;
+}
+
+html.light .prose p,
+html.light .prose li,
+html.light .prose h1,
+html.light .prose h2,
+html.light .prose h3,
+html.light .prose h4,
+html.light .prose strong {
+  color: #111111 !important;
+}
+
+html.light .prose code {
+  background-color: #E2DFD2 !important;
+  color: #000000 !important;
+  padding: 0.15rem 0.35rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+}
+
+html.light .prose pre {
+  background-color: #1E1E1E !important;
+  color: #F8F7F2 !important;
+}
+
+

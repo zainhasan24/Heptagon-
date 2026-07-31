@@ -1,0 +1,8 @@
+{
+  "name": "Heptagon",
+  "description": "Heptagon - AI Learning Engine & Instant Homework Assistant for Students.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

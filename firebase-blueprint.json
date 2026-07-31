@@ -1,0 +1,81 @@
+{
+  "entities": {
+    "user_profiles": {
+      "title": "User Profiles",
+      "description": "User profile records indexed by auth UID",
+      "type": "document",
+      "path": "user_profiles/{userId}",
+      "schema": {
+        "properties": {
+          "userId": { "type": "string" },
+          "email": { "type": "string" },
+          "displayName": { "type": "string" },
+          "photoURL": { "type": "string" },
+          "createdAt": { "type": "string", "format": "date-time" },
+          "updatedAt": { "type": "string", "format": "date-time" }
+        },
+        "required": ["userId", "email"]
+      }
+    },
+    "subscriptions": {
+      "title": "Newsletter Subscriptions",
+      "description": "Newsletter email subscriptions",
+      "type": "collection",
+      "path": "subscriptions",
+      "schema": {
+        "properties": {
+          "email": { "type": "string" },
+          "userId": { "type": "string" },
+          "createdAt": { "type": "string", "format": "date-time" }
+        },
+        "required": ["email"]
+      }
+    },
+    "saved_works": {
+      "title": "Saved Works",
+      "description": "Works saved or bookmarked by authenticated users",
+      "type": "collection",
+      "path": "saved_works",
+      "schema": {
+        "properties": {
+          "userId": { "type": "string" },
+          "workId": { "type": "string" },
+          "savedAt": { "type": "string", "format": "date-time" }
+        },
+        "required": ["userId", "workId"]
+      }
+    },
+    "work_likes": {
+      "title": "Work Likes",
+      "description": "Appreciation and likes given to portfolio works",
+      "type": "collection",
+      "path": "work_likes",
+      "schema": {
+        "properties": {
+          "userId": { "type": "string" },
+          "workId": { "type": "string" },
+          "likedAt": { "type": "string", "format": "date-time" }
+        },
+        "required": ["userId", "workId"]
+      }
+    },
+    "inquiries": {
+      "title": "Inquiries & Contact Messages",
+      "description": "Contact form submissions and project inquiries",
+      "type": "collection",
+      "path": "inquiries",
+      "schema": {
+        "properties": {
+          "name": { "type": "string" },
+          "email": { "type": "string" },
+          "projectType": { "type": "string" },
+          "budget": { "type": "string" },
+          "message": { "type": "string" },
+          "userId": { "type": "string" },
+          "createdAt": { "type": "string", "format": "date-time" }
+        },
+        "required": ["name", "email", "message"]
+      }
+    }
+  }
+}

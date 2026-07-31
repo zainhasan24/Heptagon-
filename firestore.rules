@@ -1,0 +1,41 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // User profiles
+    match /user_profiles/{userId} {
+      allow read: if isAuthenticated();
+      allow write: if isOwner(userId);
+    }
+
+    // Subscriptions - public can subscribe, owners or auth users can manage
+    match /subscriptions/{subscriptionId} {
+      allow create: if true;
+      allow read, update, delete: if isAuthenticated();
+    }
+
+    // Saved works - authenticated users can manage their saved items
+    match /saved_works/{savedId} {
+      allow read, create, delete: if isAuthenticated();
+    }
+
+    // Work likes - authenticated users can like or view likes
+    match /work_likes/{likeId} {
+      allow read: if true;
+      allow create, delete: if isAuthenticated();
+    }
+
+    // Inquiries - public can submit, authenticated users can read
+    match /inquiries/{inquiryId} {
+      allow create: if true;
+      allow read, update, delete: if isAuthenticated();
+    }
+  }
+}
